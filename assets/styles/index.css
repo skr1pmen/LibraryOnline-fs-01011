@@ -1,40 +1,48 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* { /* Обращение ко всем елементам на странице */
+    padding: 0; /* Удаление внутренных отступов */
+    margin: 0; /* Удаление внешних отступов */
+    box-sizing: border-box; /* Вычитание padding из конечной ширины и высоты блоков на сайте */
 }
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+
+body { /* Обращение к блоку body(контенту сайта) на страйнице */
+    min-height: 100vh; /* Задаём минимальную высоту экрана равной высоте окна браузера */
+    display: flex; /* Делаем наш экран более "гибким" */
+    flex-direction: column; /* Перевод контента экрана от горизонтального(строчного) позицианирования в вертикальный(колоночный) */
 }
-main{
-    flex: 1;
+
+main { /* Обращение к соновному блоку на старнице */
+    flex: 1; /* Так как наш body "гибкий" мы можем настроить и отдать блоку больщую часть места на экране */
 }
-header, footer{
-    background: darkgreen;
-    padding: 8px;
+
+header, footer { /* Обращение к шапке и подвалу на старнице */
+    background: darkgreen; /* Выдача заднего фона */
+    padding: 8px; /* Выдача внутренних отступов */
 }
-footer{
-    display: flex;
-    justify-content: center;
-    color: #fff;
+
+footer { /* Обращение к подвалу на старнице */
+    display: flex; /* Делаем наш экран более "гибким" */
+    justify-content: center; /* Выравниваем элемента по вертикали */
+    color: #fff; /* Даём тексту цвет */
 }
-header .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+header .container { /* Обращение к шапке в нутри которого есть блок с классом "container" на старнице */
+    display: flex; /* Делаем наш экран более "гибким" */
+    justify-content: space-between; /* Выравниваем элемента по вертикали (в этот раз равноудалённо друг от друга) */
+    align-items: center; /* Выравниваем элемента по горизонтали */
 }
-.container{
-    width: 1200px;
-    margin: 0 auto;
+
+.container { /* Обращение к блоку с классом "container" на старнице */
+    width: 1200px; /* Задаём фиксированную ширену блока */
+    margin: 0 auto; /* С помощью данной комбинации внешних отступов центруем элемент */
 }
-a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+
+a { /* Обращение ко всем ссылкам на старнице */
+    color: #fff; /* Даём тексту цвет */
+    text-decoration: none; /* Убираем нижнее подчёркивание у ссылки */
+    font-size: 18px; /* Выдаём размер текста */
 }
-nav{
-    display: flex;
-    gap: 12px;
+
+nav { /* Обращение к элементу навигации */
+    display: flex; /* Делаем наш экран более "гибким" */
+    gap: 12px; /* Выдаём отступ между flex элементами */
 }
