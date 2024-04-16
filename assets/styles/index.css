@@ -46,3 +46,31 @@ nav { /* Обращение к элементу навигации */
     display: flex; /* Делаем наш экран более "гибким" */
     gap: 12px; /* Выдаём отступ между flex элементами */
 }
+
+.form_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_page form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.btn {
+    background: darkgreen;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+    outline: none;
+    border: none;
+}
