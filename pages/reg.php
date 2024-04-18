@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 
 <head>
@@ -9,14 +10,19 @@
     <div class="container">
         <a href="/">LibraryOnline</a>
         <nav>
-            <a href="./auth.php">Войти</a>
-            <a href="./reg.php">Регистрация</a>
+            <?php if (empty($_SESSION['user'])) : ?>
+                <a href="../pages/auth.php">Войти</a>
+                <a href="../pages/reg.php">Регистрация</a>
+            <?php else : ?>
+                <a href="../backend/logout.php">Выйти</a>
+            <?php endif; ?>
         </nav>
     </div>
 </header>
 <main class="container form_page">
     <form action="../backend/registration.php" method="post" enctype="multipart/form-data">
         <h2>Регистрация</h2>
+        <span><?= !empty($_SESSION['error']) ? $_SESSION['error'] : "" ?></span>
         <label>
             Введите ваше ФИО:<br>
             <input type="text" name="fio">
