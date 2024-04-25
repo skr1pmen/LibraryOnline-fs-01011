@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+!empty($_SESSION['user']) ? header('location: ../') : null; //Проверка на авторизацию. Если она уже прошла, то переадресация на главную страницу
 ?>
 
 <head>
