@@ -19,7 +19,9 @@ session_start();
     </div>
 </header>
 <main> <!--Отображение основного контента сайта-->
-
+    <div class="container">
+        <a class="btn" href="./pages/addBook.php">Добавление книги</a>
+    </div>
 </main>
 <footer> <!--Отображение "подвала" сайта-->
     ©LibraryOnline <?= Date("Y") ?>

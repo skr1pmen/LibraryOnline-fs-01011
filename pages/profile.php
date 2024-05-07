@@ -1,7 +1,10 @@
 <?php
 require '../backend/userProfile.php'; // Подключение файла для обработки пользователя
-$user = getUser(); // Получение данных о пользователе
-var_dump($user);
+$userId = empty($_GET['id']) ? $_SESSION['user']['id'] : $_GET['id'];
+$user = getUser($userId); // Получение данных о пользователе
+//var_dump($user);
+
+//    /pages/profile.php?id=10
 
 ?>
 <head>
@@ -22,7 +25,21 @@ var_dump($user);
     </div>
 </header>
 <main>
-
+    <div class="container">
+        <?php if (is_array($user)) : ?>
+            <div class="user_info">
+                <?php if (file_exists('../assets/images/users_avatar/' . $user['id'] . '.jpg')): ?>
+                    <img src="<?= '../assets/images/users_avatar/' . $user['id'] . '.jpg' ?>" alt="">
+                <?php endif; ?>
+                <h2><?= $user['fio'] ?></h2>
+                <span>#<?= $user['login'] ?></span>
+            </div>
+        <?php else : ?>
+            <div class="error_message">
+                <span><?= $user ?></span>
+            </div>
+        <?php endif; ?>
+    </div>
 </main>
 <footer>
     ©LibraryOnline <?= Date("Y") ?>

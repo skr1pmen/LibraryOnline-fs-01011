@@ -8,6 +8,7 @@ body { /* Обращение к блоку body(контенту сайта) н�
     min-height: 100vh; /* Задаём минимальную высоту экрана равной высоте окна браузера */
     display: flex; /* Делаем наш экран более "гибким" */
     flex-direction: column; /* Перевод контента экрана от горизонтального(строчного) позиционирования в вертикальный(колоночный) */
+    font-family: Arial, sans-serif;
 }
 
 main { /* Обращение к основному блоку на странице */
@@ -73,4 +74,38 @@ input[type=file] {
     padding: 8px;
     outline: none;
     border: none;
+}
+
+.user_info {
+    margin: 0 auto;
+    width: 750px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px gray;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.user_info img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user_info h2,
+.user_info span {
+    text-align: center;
+    margin-top: 12px;
+    display: block;
+}
+
+.error_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
 }
