@@ -1,5 +1,7 @@
 <?php
 session_start();
+require '../backend/db.php';
+$authors = select("SELECT * FROM authors"); // Получение всех авторов из бд
 ?>
 
 <head>
@@ -35,7 +37,9 @@ session_start();
             Введите автора книги:<br>
             <input type="text" name="author" list="authors">
             <datalist id="authors">
-
+                <?php foreach ($authors as $author): ?> <!-- Перебор авторов -->
+                    <option><?= $author['fio'] ?></option> <!-- Вывод списка авторов -->
+                <?php endforeach; ?> <!-- Конец перебора -->
             </datalist>
         </label>
         <label>

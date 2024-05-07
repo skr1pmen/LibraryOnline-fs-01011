@@ -1,0 +1,30 @@
+create table users
+(
+    id       serial
+        constraint users_pk
+            primary key,
+    fio      varchar,
+    login    varchar not null,
+    password varchar not null,
+    is_admin boolean default false
+);
+
+create table authors
+(
+    id  serial
+        primary key,
+    fio varchar
+);
+
+create table books
+(
+    id          serial
+        constraint books_pk
+            primary key,
+    title       varchar not null,
+    description varchar,
+    author_id   integer
+        constraint books_to_authors_fk
+            references authors,
+    date        timestamp default CURRENT_TIMESTAMP
+);

@@ -29,4 +29,25 @@ $getAuthor = select(
     'SELECT * FROM authors WHERE fio = :fio',
     ['fio' => $author]
 );
-var_dump($getAuthor);
+//var_dump($getAuthor);
+
+if (empty($getAuthor)) { //Проверка существования автора в бд от пользователя
+    $author_id = insert( //Запись нового автора с получением его id
+        'INSERT INTO authors (fio) VALUES (:fio)',
+        ['fio' => $author]
+    );
+} else { // Если автор уже есть, то получаем его id
+    $author_id = $getAuthor[0]['id'];
+}
+
+$newBook = insert( // Создание Новой книги и получение её id
+    'INSERT INTO books (title, description, author_id) VALUES (:title, :description, :author_id)',
+    [
+        'title' => $name,
+        'description' => $description,
+        'author_id' => $author_id
+    ]
+);
+
+move_uploaded_file($cover['tmp_name'], '../assets/images/covers/' . $newBook . '.jpg'); // Сохранение обложки книги с названием id книги
+header('location: ../'); // Переадресация пользователя на главную страницу
