@@ -28,3 +28,13 @@ create table books
             references authors,
     date        timestamp default CURRENT_TIMESTAMP
 );
+
+create table rent_books
+(
+    id        serial
+        constraint rent_books_pk
+            primary key,
+    user_id   integer not null,
+    book_id   integer not null,
+    rent_date date default CURRENT_DATE
+);

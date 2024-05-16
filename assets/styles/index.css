@@ -147,3 +147,53 @@ input[type=file] {
     width: max-content;
     margin: 0 auto;
 }
+
+/*  Стили для страницы о книге  */
+
+.book_page {
+    width: 950px;
+    display: flex;
+    gap: 24px;
+    margin: 0 auto;
+}
+
+.book_page img {
+    width: 30%;
+    border-radius: 4px;
+    transition: all .3s linear;
+}
+
+.book_page img:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 5px 15px gray;
+}
+
+.book_info {
+    margin-top: 24px;
+}
+
+.book_info h1 {
+    font-size: 40px;
+    color: green;
+    margin-bottom: 24px;
+}
+
+.book_info span {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.book_info p {
+    color: green;
+}
+
+.book_info i {
+    color: gray;
+}
+
+.book_info a {
+    display: block;
+    width: max-content;
+    margin-top: 12px;
+}
