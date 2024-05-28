@@ -24,6 +24,9 @@ if (!empty($login)) { // Проверка Логина на пустоту
                     ]
                 ); // Отправка запроса в бд на регистрацию нового пользователя с получением его id
                 $_SESSION['user']['id'] = $user_id; // Сохранение id пользователя в сессию
+                if (!is_dir('../assets/images/users_avatar/')) {
+                    mkdir('../assets/images/users_avatar/', '0777', true);
+                }
                 move_uploaded_file($avatar['tmp_name'], "../assets/images/users_avatar/" . $user_id . ".jpg"); // Загружаем аватарку пользователя
                 header("location: ../"); // Переадресация пользователя на главную страницу
 

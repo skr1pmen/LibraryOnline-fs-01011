@@ -16,6 +16,7 @@ $authors = select("SELECT * FROM authors"); // Получение всех ав�
                 <a href="../pages/auth.php">Войти</a>
                 <a href="../pages/reg.php">Регистрация</a>
             <?php else : ?>
+                <a href="../pages/profile.php">Профиль</a>
                 <a href="../backend/logout.php">Выйти</a>
             <?php endif; ?>
         </nav>

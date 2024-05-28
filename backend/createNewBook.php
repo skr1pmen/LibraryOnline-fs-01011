@@ -48,6 +48,8 @@ $newBook = insert( // Создание Новой книги и получени
         'author_id' => $author_id
     ]
 );
-
+if (!is_dir('../assets/images/covers/')) {
+    mkdir('../assets/images/covers/', '0777', true);
+}
 move_uploaded_file($cover['tmp_name'], '../assets/images/covers/' . $newBook . '.jpg'); // Сохранение обложки книги с названием id книги
 header('location: ../'); // Переадресация пользователя на главную страницу
